@@ -36,7 +36,7 @@ numLessons.oninput = function () {
   
       // Add radio buttons for lesson type
       const privateLabel = document.createElement("label");
-      privateLabel.innerText = "Private Lesson($59 per class)";
+      privateLabel.innerText = "Private Lesson";
       const privateRadio = document.createElement("input");
       privateRadio.type = "radio";
       privateRadio.name = `lessonType${i}`; // Group radio buttons by lesson
@@ -44,7 +44,7 @@ numLessons.oninput = function () {
       privateRadio.id = `privateLesson${i}`;
   
       const siblingLabel = document.createElement("label");
-      siblingLabel.innerText = "Sibling Lesson($83 per class)";
+      siblingLabel.innerText = "Sibling Lesson";
       const siblingRadio = document.createElement("input");
       siblingRadio.type = "radio";
       siblingRadio.name = `lessonType${i}`; // Group radio buttons by lesson
@@ -57,6 +57,7 @@ numLessons.oninput = function () {
       
       container.appendChild(label);
       container.appendChild(input);
+      container.appendChild(lineBreak);
       container.appendChild(lineBreak);
       container.appendChild(lineBreak);
       container.appendChild(privateRadio);
