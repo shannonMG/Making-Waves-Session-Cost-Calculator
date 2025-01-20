@@ -78,6 +78,7 @@ numLessons.oninput = function () {
 // Calculate the total cost
 myCalculateCost.onclick = function () {
     const numStudentsInput = document.getElementById("numStudents");
+
     if (!numStudentsInput || isNaN(numStudentsInput.value) || parseInt(numStudentsInput.value, 10) <= 0) {
       totalCost.innerText = "Please enter a valid number of students.";
       return;
@@ -85,6 +86,7 @@ myCalculateCost.onclick = function () {
     const numberOfStudents = parseInt(numStudentsInput.value, 10);
   
     const numberOfLessonsInput = document.getElementById("numLessons");
+    
     if (!numberOfLessonsInput || isNaN(numberOfLessonsInput.value) || parseInt(numberOfLessonsInput.value, 10) <= 0) {
       totalCost.innerText = "Please enter a valid number of lessons.";
       return;
@@ -116,6 +118,11 @@ myCalculateCost.onclick = function () {
       // Calculate the cost for this lesson and add it to the total cost
       totalCostValue += numClasses * baseCostPerLesson;
     }
+
+    if (numberOfLessons >= 3) {
+      totalCostValue -= totalCostValue * discount;
+    }
+  
   
     // Add the registration fee for each swimmer
     totalCostValue += regFee * numberOfStudents;
